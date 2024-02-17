@@ -4,15 +4,12 @@
 }
 
 #wrap {
-  position: relative;
   width: 100vw;
   height: 100px;
-  margin: 0 auto;
   background-color: rgb(140, 198, 221);
 }
 
 ul {
-  position: absolute;
   width: 100vw;
   height: 100px;
   display: flex;
