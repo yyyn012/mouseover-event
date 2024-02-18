@@ -1,16 +1,21 @@
 let test = document.getElementById("example");
-let testList = document.querySelector("#example > li");
+let testList = document.querySelectorAll("#example > li > span");
+console.log(testList);
 
-function mouseOver(event) {
-  event.target.style.color = "#c2c2c2";
-  const Hello = testList.children[1];
-  Hello.innerText = "hello";
+function showTitle(event) {
+  if (event.target.dataset.title) {
+    const span = document.createElement("span");
+    span.textContent = event.target.dataset.title;
+    event.target.append(span);
+    console.log(event.target.dataset.title);
+  }
 }
 
-function mouseOut(event) {
-  event.target.style.color = "#fff";
+function removeTitle(event) {
+  if (event.target.dataset.title) {
+    event.target.lastElementChild.remove();
+  }
 }
 
-test.addEventListener("mouseover", mouseOver);
-
-test.addEventListener("mouseout", mouseOut);
+test.addEventListener("mouseover", showTitle);
+test.addEventListener("mouseout", removeTitle);
