@@ -15,13 +15,5 @@ function removeTitle(event) {
   }
 }
 
-function onClick(event) {
-  if (event.target.dataset.title) {
-    event.target.innerText = Home;
-  }
-}
-
 test.addEventListener("mouseover", showTitle);
 test.addEventListener("mouseout", removeTitle);
-
-test.addEventListener("click", onClick);
